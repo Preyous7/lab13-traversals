@@ -122,8 +122,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 	
 	private void preOrderRecurse(BSTNode<T> node) {
-		
-		
+		if(node == null) {
+			return ;
+		}
+		 System.out.print(node.data + " "); // do the work
+		 preOrderRecurse(node.leftChild); // recurse on the left subtree
+		 preOrderRecurse(node.rightChild); // recurse on the right subtree
 	}
 	
 	//Traverse the tree in an preorder fashion but using a stack
@@ -220,8 +224,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		bst.insert(2);
 		bst.insert(8);
 		bst.insert(15);
-		//bst.insert(10);
-		//bst.insert(3);
+		bst.insert(10);
+		bst.insert(3);
 		System.out.println(bst);
 	
 		System.out.println("In Order Traversals");
